@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 const cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = defineConfig({
+  projectId: "7afuur",
   e2e: {
 
     setupNodeEvents(on, config) {
@@ -10,8 +11,12 @@ module.exports = defineConfig({
       //Cucumber preprocessor integration command 
       on('file:preprocessor', cucumber())
     },
-    specPattern : 'cypress/integration/*.js',
-    reporter : 'mochawesome'
+    specPattern : 'cypress/integration/examples/BDD/*.feature',
+    reporter : 'mochawesome',
+    execTimeout: 8000,
+    defaultCommandTimeout: 12000,
+    
+
 
      
   },

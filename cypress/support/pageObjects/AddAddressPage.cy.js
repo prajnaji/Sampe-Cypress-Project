@@ -6,11 +6,11 @@ class AddAddressPage {
     }
     getselectCheckbox()
     {
-        return cy.get('div input[type=checkbox]');
+        return cy.get('label[for=checkbox2]');
     }
     getContinueCheckout()
     {
-        cy.get('input.btn.btn-success.btn-lg');
+         return cy.get('form input[type=submit]')
     }
 }
 

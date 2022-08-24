@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-24T07:48:44.241Z",
+    "end": "2022-08-24T07:48:51.707Z",
+    "duration": 7466,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "352d33ac-7d79-4313-a1e7-e582e30d69ec",
+      "title": "",
+      "fullFile": "cypress\\e2e\\examples\\testframework.cy.js",
+      "file": "cypress\\e2e\\examples\\testframework.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fb3f269e-f95c-41d0-8989-911d9947e7c4",
+          "title": "Testframwork",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Checkout scenario",
+              "fullTitle": "Testframwork Checkout scenario",
+              "timedOut": null,
+              "duration": 4136,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst mp = new _MppPage.default(); //const AddAddressPage= new AddAddressPage()\n//const OrderReviewPage = new OrderReviewPage()\ncy.visit('https://rahulshettyacademy.com/angularpractice/');\nhomePage.editNameField().type(data1.name);\nhomePage.editEmailField().type(data1.email);\nhomePage.editPasswordField().type(data1.password);\nhomePage.selctDropdown().select(data1.gender);\nhomePage.gnavShop_option().click();\ncy.get('.card-body h4').each(($el, index, list) => {\n  if ($el.text().includes('Blackberry')) {\n    cy.get('div.card-footer  button').eq(index).click();\n  }\n});\nmp.getContinueCheckout().click(); //OrderReviewPage.getContinueCheckout().click()\n//AddAddressPage.getFillAddress().type(data1.address)\n//cy.get('#checkbox2').check().should('be.checked')\n//AddAddressPage.getselectCheckbox().check().should('be.checked')\n//AddAddressPage.getContinueCheckout().click()",
+              "err": {},
+              "uuid": "2e9798de-d527-49ce-af87-bb88c656efc8",
+              "parentUUID": "fb3f269e-f95c-41d0-8989-911d9947e7c4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2e9798de-d527-49ce-af87-bb88c656efc8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4136,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

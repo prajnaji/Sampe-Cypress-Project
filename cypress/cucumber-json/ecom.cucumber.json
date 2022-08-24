@@ -1,0 +1,122 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "End to End Ecommerce Validation",
+    "line": 2,
+    "id": "end-to-end-ecommerce-validation",
+    "tags": [],
+    "uri": "ecom.feature",
+    "elements": [
+      {
+        "id": "end-to-end-ecommerce-validation;place-order-scenario",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Place order scenario",
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 4
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "Open the Ecomm Page",
+            "result": {
+              "status": "passed",
+              "duration": 466000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "Adding Product to Cart",
+            "result": {
+              "status": "passed",
+              "duration": 1619000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Validate the total price",
+            "result": {
+              "status": "passed",
+              "duration": 117000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Select the country submit and verify ThankYou",
+            "result": {
+              "status": "failed",
+              "duration": 12765000000,
+              "error_message": "CypressError: Timed out retrying after 12050ms: `cy.click()` failed because this element:\n\n`<input class=\"btn btn-success btn-lg\" type=\"submit\" value=\"Purchase\">`\n\nis being covered by another element:\n\n`<div class=\"overlay nsm-overlay-open\" style=\"z-index: 1040;\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:157751:78)\n    at ensureDescendents (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143172:8)\n    at ensureDescendentsAndScroll (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143179:14)\n    at ensureElIsNotCovered (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143311:5)\n    at runAllChecks (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143501:52)\n    at retryActionability (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143525:16)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise.attempt.Promise.try (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:8592:29)\n    at whenStable (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:162678:65)\n    at https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:162132:14\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9435:18)\n    at Promise._fulfill (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9379:18)\n    at https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:10993:46\nFrom Your Spec Code:\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\ecom.feature:96:5)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "end-to-end-ecommerce-validation;filling-data-using-fixture-concepts",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Filling data using Fixture concepts",
+        "tags": [
+          {
+            "name": "@Smoke",
+            "line": 12
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Open the Ecomm Page",
+            "result": {
+              "status": "passed",
+              "duration": 324000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "name",
+                      "email",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "God",
+                      "god@gmail.com",
+                      "godpwd"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Fill the form Details page",
+            "result": {
+              "status": "passed",
+              "duration": 711000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

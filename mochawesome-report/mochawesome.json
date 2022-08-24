@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2022-08-24T11:23:03.790Z",
-    "end": "2022-08-24T11:23:21.240Z",
-    "duration": 17450,
+    "start": "2022-08-24T11:42:09.126Z",
+    "end": "2022-08-24T11:42:27.458Z",
+    "duration": 18332,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e09f8266-379b-4f2f-a94c-cdf11eaa3f02",
+      "uuid": "75399924-2d13-44b8-91a0-c98e6214dcac",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\BDD\\ecom.feature",
       "file": "cypress\\integration\\examples\\BDD\\ecom.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "de1d3d4e-be5d-477c-8345-f79daadadc21",
+          "uuid": "f23f4ca2-997b-4a2b-ac57-bd24a502cdb2",
           "title": "End to End Ecommerce Validation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Place order scenario",
               "fullTitle": "End to End Ecommerce Validation Place order scenario",
               "timedOut": null,
-              "duration": 14305,
+              "duration": 14942,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "CypressError: Timed out retrying after 12050ms: `cy.click()` failed because this element:\n\n`<input class=\"btn btn-success btn-lg\" type=\"submit\" value=\"Purchase\">`\n\nis being covered by another element:\n\n`<div class=\"overlay nsm-overlay-open\" style=\"z-index: 1040;\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:157751:78)\n    at ensureDescendents (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143172:8)\n    at ensureDescendentsAndScroll (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143179:14)\n    at ensureElIsNotCovered (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143311:5)\n    at runAllChecks (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143501:52)\n    at retryActionability (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143525:16)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise.attempt.Promise.try (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:8592:29)\n    at whenStable (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:162678:65)\n    at https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:162132:14\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9435:18)\n    at Promise._fulfill (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:9379:18)\n    at https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:10993:46\nFrom Your Spec Code:\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\ecom.feature:96:5)",
                 "diff": null
               },
-              "uuid": "8f93e887-2326-4a61-9dfc-0953050d066f",
-              "parentUUID": "de1d3d4e-be5d-477c-8345-f79daadadc21",
+              "uuid": "b543624f-7344-40b7-9870-8adb6135f334",
+              "parentUUID": "f23f4ca2-997b-4a2b-ac57-bd24a502cdb2",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Filling data using Fixture concepts",
               "fullTitle": "End to End Ecommerce Validation Filling data using Fixture concepts",
               "timedOut": null,
-              "duration": 1008,
+              "duration": 992,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -69,22 +69,22 @@
               "context": null,
               "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "4323e714-287f-4446-be53-9b6a0bf2def9",
-              "parentUUID": "de1d3d4e-be5d-477c-8345-f79daadadc21",
+              "uuid": "21c87349-dafc-403c-a309-5aa972a13f43",
+              "parentUUID": "f23f4ca2-997b-4a2b-ac57-bd24a502cdb2",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4323e714-287f-4446-be53-9b6a0bf2def9"
+            "21c87349-dafc-403c-a309-5aa972a13f43"
           ],
           "failures": [
-            "8f93e887-2326-4a61-9dfc-0953050d066f"
+            "b543624f-7344-40b7-9870-8adb6135f334"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 15313,
+          "duration": 15934,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -1,5 +1,17 @@
 class HomePage
 {
+   myaccountIcon(){
+      return cy.get('a[title=Account] div.icon-wrapper.top-action-icons.quick-menu')
+   }
+   viewCartICon(){
+      return cy.get('a[title=Cart]')
+   }
+   shortListIcon(){
+      return cy.get('a[title=Shortlist]')
+   }
+   hamburgerIcon(){
+      return cy.get('div.gc-icon-col.gc-icon-closed img[class=img-responsive]')
+   }
 
     editNameField()
     {

@@ -11,6 +11,7 @@ module.exports = defineConfig({
       //Cucumber preprocessor integration command 
       on('file:preprocessor', cucumber())
     },
+    //specPattern : 'cypress/integration/examples/BDD/*.feature',
     specPattern : 'cypress/integration/examples/BDD/*.feature',
     reporter : 'mochawesome',
     execTimeout: 8000,

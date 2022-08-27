@@ -15,7 +15,9 @@ module.exports = defineConfig({
     specPattern : 'cypress/integration/examples/BDD/*.feature',
     reporter : 'mochawesome',
     execTimeout: 8000,
-    defaultCommandTimeout: 12000,
+    defaultCommandTimeout: 16000,
+    viewportHeight: 768,
+    viewportWidth: 1400,
     
 
 

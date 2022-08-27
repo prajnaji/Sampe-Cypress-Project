@@ -75,12 +75,16 @@ Cypress.Commands.add('getSumOfIndividual_LineItemPrice',(lineItemPrice)=>{
 
 Cypress.Commands.add('CheckTotalPurchase-Eq_Actualprice',(totalPurchasePrice)=>{
     cy.get('.text-right h3 strong ').then(function(totalPrice){
-        const text= totalPrice.text()
-       var total_price= text.split(" ")
-       total_price=total_price[1].trim()
-       expect(Number(sum)).to.equal(Number(total_price))
+        const text= totalPrice.text();
+       var total_price= text.split(" ");
+       total_price=total_price[1].trim();
+       expect(Number(sum)).to.equal(Number(total_price));
     })
 
+})
+
+Cypress.Commands.add('CheckPageTitle',(expectedPageTitle)=>{
+     cy.pageTitle().should('include',expectedPageTitle);
 })
 
 

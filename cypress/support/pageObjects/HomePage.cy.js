@@ -40,6 +40,13 @@ class HomePage
     {
        return cy.get('ul.navbar-nav  li:nth-child(2)')
     }
+    sddCTA()
+    {
+      return cy.get('a.tile-8.sdd')
+    }
+      clickPersonalizedGnavSection(){
+      return cy.get('#selection-panel > div > a.tile-8.personalized').click()
+    }
     
 
 }

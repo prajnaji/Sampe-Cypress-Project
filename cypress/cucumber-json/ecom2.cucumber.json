@@ -1,0 +1,50 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Launch Site",
+    "line": 1,
+    "id": "launch-site",
+    "tags": [],
+    "uri": "ecom2.feature",
+    "elements": [
+      {
+        "id": "launch-site;launch-my-account-site",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Launch My Account site",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Open My account site",
+            "result": {
+              "status": "undefined",
+              "duration": 108000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click CTA",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Give inputs",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

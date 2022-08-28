@@ -1,0 +1,42 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "IGP Scenario My Accounts",
+    "line": 1,
+    "id": "igp-scenario-my-accounts",
+    "tags": [],
+    "uri": "ecomm2.feature",
+    "elements": [
+      {
+        "id": "igp-scenario-my-accounts;invalid-login-scenario",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Invalid Login Scenario",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Open My account site",
+            "result": {
+              "status": "passed",
+              "duration": 11824000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User Click on SDD option",
+            "result": {
+              "status": "undefined",
+              "duration": 90000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "IGP Scenario My Accounts",
+    "line": 1,
+    "id": "igp-scenario-my-accounts",
+    "tags": [],
+    "uri": "NewUserCheckout.feature",
+    "elements": [
+      {
+        "id": "igp-scenario-my-accounts;new-user-checkout-&-signup-at-checkout",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "New User Checkout & Signup at checkout",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Launch Home Page",
+            "result": {
+              "status": "failed",
+              "duration": 66849000000,
+              "error_message": "CypressError: Timed out retrying after 16000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `13:00 hrs - 17:00 hrs`\n    at getOptions (https://www.igp.com/__cypress/runner/cypress_runner.js:146688:80)\nFrom previous event:\n    at retryOptions (https://www.igp.com/__cypress/runner/cypress_runner.js:146726:67)\n    at whenStable (https://www.igp.com/__cypress/runner/cypress_runner.js:162678:65)\n    at https://www.igp.com/__cypress/runner/cypress_runner.js:162132:14\nFrom Your Spec Code:\n    at Context.eval (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\NewUserCheckout.feature:62:35)\n    at Context.resolveAndRunStepDefinition (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\NewUserCheckout.feature:12519:29)\n    at Context.eval (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\NewUserCheckout.feature:11840:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

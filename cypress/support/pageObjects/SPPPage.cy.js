@@ -17,6 +17,21 @@ class SPPPage{
     timePicker(){
         return cy.get('#timepicker')
     }
+    addToCartCTA()
+    {
+        return cy.get('#add-cart')
+    }
+    /**Candel AddOns */
+    addOns_number0()
+    {
+        return cy.get('#ao-p-card-565537 > div > div.product-info-revamp.relative > div')
+    }
+    addOns_number1(){
+        return cy.get('#ao-p-card-565537 > div > div.product-info-revamp.relative > div')
+    }
+    addOns_singleRose(){
+        return cy.get('#ao-p-card-579649 > div > div.product-info-revamp.relative > div')
+    }
 
 
 }

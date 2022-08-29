@@ -1,5 +1,13 @@
-Feature: End to End Ecommerce Validation2
+Feature: IGP Scenario My Accounts
 
  
-Scenario: Return User Checkout
-Given : Lauch Home Page
+Scenario: New User Checkout & Signup at checkout 
+Given Launch Home Page 
+# When User Click on SDD option
+# And Select Product & Add to cart
+# And Select & Unselect Sample Products
+# And Continue without samples
+
+
+
+# Then Give inputs

@@ -1,0 +1,33 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "IGP Scenario My Accounts",
+    "line": 1,
+    "id": "igp-scenario-my-accounts",
+    "tags": [],
+    "uri": "NewUserCheckout1.feature",
+    "elements": [
+      {
+        "id": "igp-scenario-my-accounts;new-user-checkout-&-signup-at-checkout",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "New User Checkout & Signup at checkout",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Launch Home Page",
+            "result": {
+              "status": "failed",
+              "duration": 69745000000,
+              "error_message": "AssertionError: Timed out retrying after 16000ms: Expected to find element: ``, but never found it.\n    at Context.eval (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\NewUserCheckout1.feature:62:6)\n    at Context.resolveAndRunStepDefinition (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\NewUserCheckout1.feature:12544:29)\n    at Context.eval (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\NewUserCheckout1.feature:11865:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -18,11 +18,18 @@ Given ('Launch Home Page',()=>{
     sppPage.pingcodeField().type('400072');
     sppPage.selectTodatDateOption().click();
     sppPage.standardDelivery().click();
-    //cy.get('select').then($time => {$time.val("25")})
+    sppPage.timePicker().select('13:00 hrs - 17:00 hrs').should('contain.text','13:00 hrs - 17:00 hrs');
+    sppPage.addToCartCTA().click()
+    console.log("Add To Cart Button clicked")
+    cy.get('').click()
+    // sppPage.addOns_number0().click() 
+    // sppPage.addOns_number0().click()
+    // // sppPage.addOns_number1().click() 
+    // // sppPage.addOns_singleRose().click() 
+
+
     
-   // cy.get('select[id=timepicker]').click()
-    //cy.get('select[id=timepicker]').select('13:00 hrs - 17:00 hrs').eq(1)
-    cy.get('select[id=timepicker]').select('13:00 hrs - 17:00 hrs').should('have.text', ' - 17:00 hrs')
+
     
 
 

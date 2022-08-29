@@ -43,7 +43,14 @@ Given ('Launch Home Page',()=>{
     /*cCheckout Login Page Signup CTA Click */
     checkoutLoginPage.signupLink().click({force:true});
     //checkoutLoginPage.signupLink().click();
-    //cy.frameLoaded('#ce_proto_iframe');   
-
+    //cy.frameLoaded('#ce_proto_iframe');  
+    
+    /**Comming Error From below line */
+    checkoutLoginPage.newUser_fullName().type('DO NOT SHIP');
+    // checkoutLoginPage.newUser_countryField().click().type('India');
+    // checkoutLoginPage.newUser_mobileNumberField().click().type('977618658')
+    // checkoutLoginPage.newUser_emaiIdField().click().type(randomNewUseremail);
+    // checkoutLoginPage.newUser_passwordField().click().type('Tester@123',{force:true});
+    // checkoutLoginPage.newUser_signUp_submitCTA().click({force:true});
 
 }) 

@@ -21,7 +21,7 @@ let randomNewUseremail="cssprajna+" + string + '@gmail.com';
 
 
 Given ('Launch Home Page',()=>{
-    cy.visit('https://www.igp.com/#');
+    //cy.visit('https://www.igp.com/#');
     //hp.sddCTA().click()  
     cy.visit('https://www.igp.com/p-truffle-delight-cake-half-kg--145988');
     /* Input For PinCode Field */
@@ -41,8 +41,9 @@ Given ('Launch Home Page',()=>{
     cartPage.proceedCheckout().click();
 
     /*cCheckout Login Page Signup CTA Click */
-    checkoutLoginPage.signupLink().click();
-    
-    
+    checkoutLoginPage.signupLink().click({force:true});
+    //checkoutLoginPage.signupLink().click();
+    //cy.frameLoaded('#ce_proto_iframe');   
+
 
 }) 

@@ -12,14 +12,14 @@ class SPPPage{
         return cy.get(' div.row.no-margin.delivery-types-dates.d-flex button:nth-child(3)')
     }
     standardDelivery(){
-       return cy.get('label[for=Standard]')
+       return cy.get('label[for=Standard]');
     }
     timePicker(){
-        return cy.get('#timepicker')
+        return cy.get('#timepicker'); 
     }
     addToCartCTA()
     {
-        return cy.get('#add-cart')
+        return cy.get('#add-cart');
     }
     /**Candel AddOns */
     addOns_number0()
@@ -31,6 +31,17 @@ class SPPPage{
     }
     addOns_singleRose(){
         return cy.get('#ao-p-card-579649 > div > div.product-info-revamp.relative > div')
+    }
+    continueWithOutAddons(){
+        return cy.get('div.primary-cta-wrapper.active.add-ons-button > button:nth-child(3)')
+    }
+
+    fetchSystemTime(){
+    let time= new Date().getTime();
+    cy.get("#timepicker").then(function($elem) {
+          
+   })
+        
     }
 
 

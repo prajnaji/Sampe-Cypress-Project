@@ -2,12 +2,15 @@ Feature: IGP Scenario My Accounts
 
  
 Scenario: New User Checkout & Signup at checkout 
-Given Launch Home Page 
-# When User Click on SDD option
-# And Select Product & Add to cart
-# And Select & Unselect Sample Products
-# And Continue without samples
+Given Launch Home Page
+When Navigate to Spp Page
+And  EnterPincode & check Availability
+And Enter Delivery Option Type & Time
+And Add to Cart
+And Click Continue Without Addons
+Then Continue Checkout from Viewcart page
+And Landed on Checkout Signup Form & click on Signup Link
+And Fill the Signup form 
+And Fill Adress Details Form & submit
 
-
-
-# Then Give inputs
+ 

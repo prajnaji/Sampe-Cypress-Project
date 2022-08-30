@@ -15,10 +15,11 @@ module.exports = defineConfig({
     //specPattern : 'cypress/integration/examples/BDD/*.feature',
     specPattern : 'cypress/integration/examples/BDD/*.feature',
     reporter : 'mochawesome',
-    execTimeout: 8000,
-    defaultCommandTimeout: 16000,
+    execTimeout: 800000,
+    defaultCommandTimeout: 60000,
     viewportHeight: 768,
     viewportWidth: 1400,
-    reporter: 'cypress-mochawesome-reporter'
+    reporter: 'cypress-mochawesome-reporter',
+    chromeWebSecurity: false
   },
 });

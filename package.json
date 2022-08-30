@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "cypress-file-upload": "^5.0.8",
+    "iframe": "^1.0.0",
     "pirated-data": "^2.0.4"
   }
 }

@@ -6,6 +6,9 @@ class CartPage{
         return cy.get('#enabled-button')
  
     }
+    shoppingBagTitleCheck(){
+        cy.title().should('eq', 'Shopping Cart')
+    }
 
 }
 

@@ -1,4 +1,5 @@
 ///<reference types='cypress-file-upload'/>
+import 'cypress-file-upload';
 import { Given,when,Then, And} from "cypress-cucumber-preprocessor/steps";
 import HomePage from "../../../../support/pageObjects/HomePage.cy";
 import SDDPage from "../../../../support/pageObjects/SDDPage.cy"
@@ -29,10 +30,7 @@ Given ('Launch Home Page',()=>{
     cy.get('a.revamp-btn.personalisation-container__action-button').click();
 
     /*Upload Imagefile CTA */
-    cy.get('#opener');
     
-
-    
-    
-
+    //cy.get("").attachFile("Kailash.jpg");
+    cy.get('#opener').click();
 }) 

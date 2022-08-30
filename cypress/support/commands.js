@@ -51,7 +51,7 @@
 
 //import cypress from 'cypress'
  
-import './commands'
+import './commands' 
 Cypress.Commands.add('selectProductFromDropdown', (productName) => { 
     cy.get('h4.card-title').each(($ele,index,$list)=>
     {

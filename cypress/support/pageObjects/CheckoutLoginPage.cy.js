@@ -41,6 +41,9 @@ class CheckoutLoginPage{
     newUser_signUp_submitCTA(){
         return cy.get('#row-submit > div:nth-child(1) > button');
     }
+    checkoutLoginPage_checkTitle(){
+        cy.title().should('eq','Checkout')
+    }
 
 }
 

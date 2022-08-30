@@ -5,7 +5,7 @@
     "line": 1,
     "id": "igp-scenario-my-accounts",
     "tags": [],
-    "uri": "ReturnUserCheckout.feature",
+    "uri": "ReturnUserCheckout2.feature",
     "elements": [
       {
         "id": "igp-scenario-my-accounts;new-user-checkout-&-signup-at-checkout",
@@ -22,7 +22,7 @@
             "name": "Launch Home Page",
             "result": {
               "status": "passed",
-              "duration": 56109000000
+              "duration": 3741000000
             }
           }
         ]

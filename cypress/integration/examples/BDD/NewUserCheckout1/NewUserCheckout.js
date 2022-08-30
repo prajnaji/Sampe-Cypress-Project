@@ -46,7 +46,8 @@ Given ('Launch Home Page',()=>{
     //cy.frameLoaded('#ce_proto_iframe');  
     
     /**Comming Error From below line */
-    checkoutLoginPage.newUser_fullName().type('DO NOT SHIP');
+    //checkoutLoginPage.newUser_fullName().type('DO NOT SHIP');
+    cy.get('#cnname').clear().type('Prajna')
     // checkoutLoginPage.newUser_countryField().click().type('India');
     // checkoutLoginPage.newUser_mobileNumberField().click().type('977618658')
     // checkoutLoginPage.newUser_emaiIdField().click().type(randomNewUseremail);

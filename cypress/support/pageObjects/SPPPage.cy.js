@@ -36,12 +36,12 @@ class SPPPage{
         return cy.get('div.primary-cta-wrapper.active.add-ons-button > button:nth-child(3)')
     }
 
-    fetchSystemTime(){
-    let time= new Date().getTime();
-    cy.get("#timepicker").then(function($elem) {
-          
-   })
-        
+    personalizeNowCTA(){
+        return cy.get('#personalize-revamp');
+    }
+
+    makeItExtraSpecialCTA(){
+        return cy.get('#add-ons-btn');
     }
 
 

@@ -97,8 +97,8 @@ And('Fill Adress Details Form & submit',()=>{
         return false
       })
     deliveryDetails.nameField().type('Prajna', { force:true })
-    deliveryDetails.addressLine1().clear().type('Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange', { force:true });
-    deliveryDetails.mobileNumber1().clear().type('9776186519', { force:true })
+    deliveryDetails.addressLine1().type('Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange', { force:true });
+    deliveryDetails.mobileNumber1().type('9776186519', { force:true })
     deliveryDetails.submitButton().click();
 
 })

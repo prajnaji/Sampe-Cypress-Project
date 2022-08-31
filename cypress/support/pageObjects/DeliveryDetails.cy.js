@@ -1,7 +1,10 @@
 class DeliveryDetails{
 
     /*First & Last Name field */
-    nameField(){ return cy.get('input[name=fname]');};
+    nameField(){ 
+        cy.wait(2000);
+        return cy.get('input[name=fname]');
+    };
 
     /*Address Line 1*/
     addressLine1(){return cy.get('input[name=saddr]')};

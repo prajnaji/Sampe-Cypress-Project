@@ -36,7 +36,9 @@ And('EnterPincode & check Availability',()=>{
     sppPage.pingcodeField().type('400072');
 })
 And('Enter Delivery Option Type & Time',()=>{
-  
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
   /*Selecting Delevery Option as Same Day Delivery  */
   sppPage.selectTodatDateOption().click();
   /*Selecting Standard Delivery */
@@ -46,42 +48,57 @@ And('Enter Delivery Option Type & Time',()=>{
   /*Click On ADD To Cart Button*/  
 })
 And('Add to Cart',()=>{
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
     sppPage.addToCartCTA().click();
     
     console.log("Add To Cart Button clicked");
 
     })
 And ('Click Continue Without Addons',()=>{
-
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
     /*Click on Continue Add WithouAddon */
     sppPage.continueWithOutAddons().should('contain.text','CONTINUE WITHOUT ADDONS').click();
 })
 Then('Continue Checkout from Viewcart page',()=>{
- 
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
     /*Checkout From View Shopping Bag/cart page */
     cartPage.shoppingBagTitleCheck();
     cartPage.proceedCheckout().click();
 
 })
 And('Landed on Checkout Signup Form & click on Signup Link',()=>{
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
     checkoutLoginPage.checkoutLoginPage_checkTitle();
     checkoutLoginPage.signupLink().click({force:true})
 })
 
 And('Fill the Signup form',()=>{
-     
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
     checkoutLoginPage.newUser_fullName().type('DO ', { force:true });
     checkoutLoginPage.newUser_countryField().type('India', { force:true });
-    checkoutLoginPage.newUser_mobileNumberField().type('98776186518', { force:true })
+    checkoutLoginPage.newUser_mobileNumberField().type('9877618651', { force:true })
     checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail, { force:true })
     checkoutLoginPage.newUser_passwordField().type("Tester@123",{force:true})
     checkoutLoginPage.newUser_signUp_submitCTA().click({force:true})
 
 })
 And('Fill Adress Details Form & submit',()=>{
-    deliveryDetails.nameField().type('Prajna')
-    deliveryDetails.addressLine1().type('Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange');
-    deliveryDetails.mobileNumber1().type('9776186519')
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
+    deliveryDetails.nameField().type('Prajna', { force:true })
+    deliveryDetails.addressLine1().clear().type('Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange', { force:true });
+    deliveryDetails.mobileNumber1().clear().type('9776186519', { force:true })
     deliveryDetails.submitButton().click();
 
 })

@@ -8,6 +8,7 @@ import DeliveryDetails from "../../../../support/pageObjects/DeliveryDetails.cy"
 import HomePage from "../../../../support/pageObjects/HomePage.cy";
 import SDDPage from "../../../../support/pageObjects/SDDPage.cy"
 import SPPPage from "../../../../support/pageObjects/SPPPage.cy";
+import OrderSummeryPage from '../../../../support/pageObjects/OrderSummeryPage.cy';
  
 const hp = new HomePage();
 const sddpage= new SDDPage();
@@ -15,6 +16,7 @@ const sppPage = new SPPPage();
 const cartPage = new CartPage();
 const checkoutLoginPage = new CheckoutLoginPage();
 const deliveryDetails = new DeliveryDetails();
+const orderSummeryPage = new OrderSummeryPage
 var chars = '1234567890';
 var string = '';
 for(var ii=0; ii<4; ii++){
@@ -96,10 +98,19 @@ And('Fill Adress Details Form & submit',()=>{
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false
       })
+      cy.wait(5000);
     deliveryDetails.nameField().type('Prajna', { force:true })
     deliveryDetails.addressLine1().type('Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange', { force:true });
     deliveryDetails.mobileNumber1().type('9776186519', { force:true })
     deliveryDetails.submitButton().click();
+
+})
+And('Apply CupponCode at OrderSummeryPage',()=>{
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
+      orderSummeryPage.click_ApplyCupponCodeLink();
+      orderSummeryPage.enterValidCupponcode("igp10","Yayy !! Coupon Code successfully applied");
 
 })
 

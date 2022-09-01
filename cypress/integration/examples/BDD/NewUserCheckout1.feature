@@ -12,5 +12,6 @@ Then Continue Checkout from Viewcart page
 And Landed on Checkout Signup Form & click on Signup Link
 And Fill the Signup form 
 And Fill Adress Details Form & submit
+And Apply CupponCode at OrderSummeryPage
 
  

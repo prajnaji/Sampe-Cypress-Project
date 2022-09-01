@@ -87,7 +87,12 @@ Cypress.Commands.add('CheckPageTitle',(expectedPageTitle)=>{
      cy.pageTitle().should('include',expectedPageTitle);
 })
 
-
+Cypress.Commands.add('EnterValidCupponCode',(cupponCode,successMSG)=>{
+     
+        //cy.get('#coupon-form input').type(cupponCode,{enter});
+        cy.get('#coupon-form button[type=submit]').click({force:true});
+        cy.get('div.apply-coupan.revamp-apply-coupon.relative div:nth-child(3) > div:nth-child(2) span').should('contain.text',successMSG);
+})
 
 })
 

@@ -2,7 +2,7 @@ class DeliveryDetails{
 
     /*First & Last Name field */
     nameField(){ 
-        cy.wait(2000);
+       
         return cy.get('input[name=fname]');
     };
 

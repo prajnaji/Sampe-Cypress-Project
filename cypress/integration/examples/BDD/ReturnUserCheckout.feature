@@ -1,4 +1,4 @@
-Feature: IGP Scenario My Accounts
+Feature: IGP POC Checkout Scenario  
 
  
 Scenario: New User Checkout & Signup at checkout 

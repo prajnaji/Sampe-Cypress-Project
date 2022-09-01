@@ -5,6 +5,18 @@ class DeliveryDetails{
        
         return cy.get('input[name=fname]');
     };
+    /*Pincode Field  */
+    pincode(){
+        return cy.get('#location-input');
+    };
+    /*City Field */
+    cityField(){
+        return cy.get('#new-city');
+    };
+    /*State Field */
+    stateField(){
+        return cy.get('#new-state');
+    };
 
     /*Address Line 1*/
     addressLine1(){return cy.get('input[name=saddr]')};

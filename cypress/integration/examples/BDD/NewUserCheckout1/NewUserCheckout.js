@@ -110,7 +110,7 @@ And('Apply CupponCode at OrderSummeryPage',()=>{
         return false
       })
       orderSummeryPage.click_ApplyCupponCodeLink();
-      orderSummeryPage.enterValidCupponcode("igp10","Yayy !! Coupon Code successfully applied");
+      
 
 })
 

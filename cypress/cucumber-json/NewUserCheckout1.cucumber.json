@@ -22,7 +22,7 @@
             "name": "Launch Home Page",
             "result": {
               "status": "passed",
-              "duration": 6453000000
+              "duration": 5731000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "Navigate to Spp Page",
             "result": {
               "status": "passed",
-              "duration": 45506000000
+              "duration": 45341000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "EnterPincode & check Availability",
             "result": {
               "status": "passed",
-              "duration": 565000000
+              "duration": 526000000
             }
           },
           {
@@ -52,7 +52,7 @@
             "name": "Enter Delivery Option Type & Time",
             "result": {
               "status": "passed",
-              "duration": 2552000000
+              "duration": 2835000000
             }
           },
           {
@@ -62,7 +62,7 @@
             "name": "Add to Cart",
             "result": {
               "status": "passed",
-              "duration": 4989000000
+              "duration": 4055000000
             }
           },
           {
@@ -72,7 +72,7 @@
             "name": "Click Continue Without Addons",
             "result": {
               "status": "passed",
-              "duration": 1821000000
+              "duration": 1866000000
             }
           },
           {
@@ -82,7 +82,7 @@
             "name": "Continue Checkout from Viewcart page",
             "result": {
               "status": "passed",
-              "duration": 6094000000
+              "duration": 7683000000
             }
           },
           {
@@ -92,7 +92,7 @@
             "name": "Landed on Checkout Signup Form & click on Signup Link",
             "result": {
               "status": "passed",
-              "duration": 238000000
+              "duration": 194000000
             }
           },
           {
@@ -102,7 +102,7 @@
             "name": "Fill the Signup form",
             "result": {
               "status": "passed",
-              "duration": 2062000000
+              "duration": 2751000000
             }
           },
           {
@@ -112,7 +112,7 @@
             "name": "Fill Adress Details Form & submit",
             "result": {
               "status": "passed",
-              "duration": 22217000000
+              "duration": 20205000000
             }
           },
           {
@@ -122,7 +122,7 @@
             "name": "Apply CupponCode at OrderSummeryPage",
             "result": {
               "status": "passed",
-              "duration": 3530000000
+              "duration": 3056000000
             }
           }
         ]

@@ -86,7 +86,7 @@ And('Fill the Signup form',()=>{
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false
       })
-    checkoutLoginPage.newUser_fullName().type('DO ', { force:true });
+    checkoutLoginPage.newUser_fullName().type('DO NOT DELIVER', { force:true });
     checkoutLoginPage.newUser_countryField().type('India', { force:true });
     checkoutLoginPage.newUser_mobileNumberField().type('9877618651', { force:true })
     checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail, { force:true })

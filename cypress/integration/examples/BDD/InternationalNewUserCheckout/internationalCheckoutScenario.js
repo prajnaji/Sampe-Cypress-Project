@@ -71,11 +71,11 @@ Given('Launch Home Page & navigate to single product page', () => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
           })
-        checkoutLoginPage.newUser_fullName().type('Do Not Deliver');
-        checkoutLoginPage.newUser_countryField().type('India');
-        checkoutLoginPage.newUser_mobileNumberField().type('9776186510');
-        checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail);
-        checkoutLoginPage.newUser_passwordField().type('Tester@123');
+        checkoutLoginPage.newUser_fullName().type('Do Not Deliver',{force:true});
+        checkoutLoginPage.newUser_countryField().type('India',{force:true});
+        checkoutLoginPage.newUser_mobileNumberField().type('9776186510',{force:true});
+        checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail,{force:true});
+        checkoutLoginPage.newUser_passwordField().type('Tester@123',{force:true});
         checkoutLoginPage.newUser_signUp_submitCTA().click({force:true});
     
     })

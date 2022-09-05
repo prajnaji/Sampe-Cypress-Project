@@ -33,4 +33,18 @@ Given ('Launch Home Page',()=>{
     
     //cy.get("").attachFile("Kailash.jpg");
     cy.get('#opener').click();
+
+    cy.fixture('image/Kailash.jpg').as('logo')
+    cy.get('input[type=file]').then(function ($input) {
+  // convert the logo base64 string to a blob
+  const blob = Cypress.Blob.base64StringToBlob(this.logo, 'image/png')
+
+  // pass the blob to the fileupload jQuery plugin
+  // https://github.com/blueimp/jQuery-File-Upload
+  // used in your application's code
+  // which initiates a programmatic upload
+  $input.fileupload('add', { files: blob })
+})
+
+
 }) 

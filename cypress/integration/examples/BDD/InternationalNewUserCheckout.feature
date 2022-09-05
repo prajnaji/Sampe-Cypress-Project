@@ -8,7 +8,7 @@ And Continue Checkout from Viewcart page
 Then Landed on Checkout Signup Form & click on Signup Link
 And Fill the Signup form
 | name | county | mob | password |
-|Test Do Not Deliver | USA | 443322112233 | Tester@123 |
+| TEST DO NOT DELIVER | USA | 443322112233 | Tester@123 |
 Then Fill International Adress Details Form & submit
 | name1 | pin | city | state | address1 | mobnumber1 |
 | International DO NOT DELIVER | 85001 | Phoenix | Arizona | #32 richmond street | 443322112233 |

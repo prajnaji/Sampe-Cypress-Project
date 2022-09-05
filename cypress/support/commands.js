@@ -52,9 +52,15 @@
 //import cypress from 'cypress'
  
 import './commands' 
+import CheckoutLoginPage from "../support/pageObjects/CheckoutLoginPage.cy"
+
+const chklogin = new CheckoutLoginPage();
+ 
 Cypress.Commands.add('selectProductFromDropdown', (productName) => { 
+    
     cy.get('h4.card-title').each(($ele,index,$list)=>
     {
+    
         //const productName=$ele.text()
         if(productName.includes(productName))
         {
@@ -95,5 +101,17 @@ Cypress.Commands.add('EnterValidCupponCode',(cupponCode,successMSG)=>{
 })
 
 })
+
+//Reusable Utils --------------------------------
+
+Cypress.Commands.add('RegisteredUserlogin', (email, pw) => {
+    chklogin.registeredUser_Email().type(email);
+    chklogin.registeredUser_Password().type(pw);
+
+})
+ 
+ 
+
+
 
 

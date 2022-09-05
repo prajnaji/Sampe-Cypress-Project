@@ -73,45 +73,9 @@ Then('Continue Checkout from Viewcart page', () => {
     /*Checkout From View Shopping Bag/cart page */
     cartPage.shoppingBagTitleCheck();
     cartPage.proceedCheckout().click();
-
-})
-And('Landed on Checkout Signup Form & click on Signup Link', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
     checkoutLoginPage.checkoutLoginPage_checkTitle();
-    checkoutLoginPage.signupLink().click({ force: true })
-})
-
-And('Fill the Signup form', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
-    checkoutLoginPage.newUser_fullName().type('DO NOT DELIVER', { force: true });
-    checkoutLoginPage.newUser_countryField().type('India', { force: true });
-    checkoutLoginPage.newUser_mobileNumberField().type('9877618651', { force: true })
-    checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail, { force: true })
-    checkoutLoginPage.newUser_passwordField().type("Tester@123", { force: true })
-    checkoutLoginPage.newUser_signUp_submitCTA().click({ force: true })
+    //Cypress.RegisteredUserlogin("prajna+098@gmail.com","Tester@123")
+    checkoutLoginPage.returnUserLogin("prajna+999@gmail.com","Tester@123");
 
 })
-And('Fill Adress Details Form & submit', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
-    cy.wait(5000);
-    deliveryDetails.nameField().type('Prajna', { force: true })
-    deliveryDetails.addressLine1().type('Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange', { force: true });
-    deliveryDetails.mobileNumber1().type('9776186519', { force: true })
-    deliveryDetails.submitButton().click();
-
-})
-And('Apply CupponCode at OrderSummeryPage', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
-    orderSummeryPage.click_ApplyCupponCodeLink();
-
-
-})
-
+ 

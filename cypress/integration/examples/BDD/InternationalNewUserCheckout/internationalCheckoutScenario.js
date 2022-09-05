@@ -71,29 +71,34 @@ Given('Launch Home Page & navigate to single product page', () => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
           })
-        checkoutLoginPage.newUser_fullName().type('Do Not Deliver',{force:true});
-        checkoutLoginPage.newUser_countryField().type('India',{force:true});
-        checkoutLoginPage.newUser_mobileNumberField().type('9776186510',{force:true});
-        checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail,{force:true});
-        checkoutLoginPage.newUser_passwordField().type('Tester@123',{force:true});
-        checkoutLoginPage.newUser_signUp_submitCTA().click({force:true});
-    
+        
+        
+        checkoutLoginPage.internationalUserSignup(dataTable.rawTable[1][0],dataTable.rawTable[1][1],dataTable.rawTable[1][2],randomNewUseremail,dataTable.rawTable[1][3]);
+        // checkoutLoginPage.newUser_fullName().type(dataTable.rawTable[1][0],{force:true});
+        // checkoutLoginPage.newUser_countryField().type(dataTable.rawTable[1][1],{force:true});
+        // checkoutLoginPage.newUser_mobileNumberField().type(dataTable.rawTable[1][2],{force:true});
+        // checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail,{force:true});
+        // checkoutLoginPage.newUser_passwordField().type(dataTable.rawTable[1][3],{force:true});
+        // checkoutLoginPage.newUser_signUp_submitCTA().click({force:true});
     })
     Then ('Fill International Adress Details Form & submit',function(dataTable){
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
           })
           cy.wait(5000);
-        deliveryDetails.nameField().type('International-Do Not Deliver');
-        deliveryDetails.pincode().type('85001');
-        deliveryDetails.cityField().type('Phoenix');
-        deliveryDetails.stateField().type('Arizona');
-        deliveryDetails.addressLine1().type('#32 richmond street ');
-        deliveryDetails.mobileNumber1().type('443322112233');
-        deliveryDetails.submitButton().click();
+        deliveryDetails.nameField().type(dataTable.rawTable[1][0],{force:true});
+        deliveryDetails.pincode().type(dataTable.rawTable[1][1],{force:true});
+        deliveryDetails.cityField().type(dataTable.rawTable[1][2],{force:true});
+        deliveryDetails.stateField().type(dataTable.rawTable[1][3],{force:true});
+        deliveryDetails.addressLine1().type(dataTable.rawTable[1][4],{force:true});
+        deliveryDetails.mobileNumber1().type(dataTable.rawTable[1][5],{force:true});
+        deliveryDetails.submitButton().click({force:true});
     
     })
     And('Continue Checkout from Order Summery Page',()=>{
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+          }) 
         orderSummeryPage.click_ProceedTOPayment_CTA();
     })
     

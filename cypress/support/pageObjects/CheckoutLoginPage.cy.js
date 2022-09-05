@@ -1,23 +1,15 @@
 class CheckoutLoginPage{
-     RU_Email(){
+     registeredUser_Email(){
         return cy.get('#email');
     }
-    RU_Password(){
+    registeredUser_Password(){
         return cy.get('#passwd')
     }
-    RU_SubmitCTA()
+    registeredUser_SubmitCTA()
     {
         return cy.get('#row-submit > div:nth-child(1) > button')
     }
-
-    RULoginForm()
-    {
-        cy.get('#email').type('cssprajna+098@gmail.com');
-        cy.get('#passwd').type('Tester@123');
-        cy.get('#row-submit > div:nth-child(1) > button').click();
-
-
-    }
+ 
     
     /* New User - Sign up form Web Elements */
     signupLink(){
@@ -43,6 +35,27 @@ class CheckoutLoginPage{
     }
     checkoutLoginPage_checkTitle(){
         cy.title().should('eq','Checkout')
+    }
+
+    // Reusable methods for Checkout Signin Page
+
+    /* For Registered User Login */
+    returnUserLogin(emailid,pwd){
+        cy.get('#email').type(emailid,{force:true});
+        cy.get('#passwd').type(pwd,{force:true});
+        cy.get('#row-submit > div:nth-child(1) > button').click({force:true});
+
+
+    }
+    /*For International User sign Up */
+    internationalUserSignup(fullName,country,mobileNumber,emaiI,password){
+        cy.get('#goto-signup').click({force:true})
+        cy.get('#cname').type(fullName,{force:true});
+        cy.get('#row-country > div >input[placeholder=Country]').type(country,{force:true});
+        cy.get('#row-mob > div >div:nth-child(3) > input').type(mobileNumber,{force:true});
+        cy.get('#row-email div input').type(emaiI,{force:true});
+        cy.get('#row-passwd div input').type(password,{force:true});
+        cy.get('#row-submit > div:nth-child(1) > button').click({force:true})
     }
 
 }

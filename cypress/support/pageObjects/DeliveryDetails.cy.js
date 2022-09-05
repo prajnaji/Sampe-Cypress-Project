@@ -35,6 +35,13 @@ class DeliveryDetails{
 
 
 
+
+
+
+
+    //Reusable methods 
+     
+
     
    
 }

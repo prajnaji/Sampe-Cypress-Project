@@ -58,6 +58,11 @@ class CheckoutLoginPage{
         cy.get('#row-submit > div:nth-child(1) > button').click({force:true})
     }
 
+    
+
+
 }
+
+ 
 
 export default CheckoutLoginPage;

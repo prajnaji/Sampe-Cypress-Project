@@ -67,10 +67,10 @@ Cypress.Commands.add('selectProductFromDropdown', (productName) => {
             cy.get('div.card-footer  button').eq(index).click()
 
         }
-   }),
+   })
 
-Cypress.Commands.add('getSumOfIndividual_LineItemPrice',(lineItemPrice)=>{
-    cy.get('tr td:nth-child(4) strong ').each(($ele,index,list)=>{
+Cypress.Commands.add('getSumOfIndividual_LineItemPrice',()=>{
+    cy.get('p.c-item-d-type.d-flex.justify-content-flex-end > span:nth-child(1)').each(($ele,index,list)=>{
         var indvidualproductPrice=$ele.text().split(" ");
         indvidualproductPrice = indvidualproductPrice[1].trim()
         sum = Number(sum)+Number(indvidualproductPrice)
@@ -79,8 +79,8 @@ Cypress.Commands.add('getSumOfIndividual_LineItemPrice',(lineItemPrice)=>{
     }).then(function(){console.log(sum)})
 })
 
-Cypress.Commands.add('CheckTotalPurchase-Eq_Actualprice',(totalPurchasePrice)=>{
-    cy.get('.text-right h3 strong ').then(function(totalPrice){
+Cypress.Commands.add('CheckTotalPurchase_Eq_Actualprice',(totalPurchasePrice)=>{
+    cy.get('p.overall-price > span[id=cart-total-val]').then(function(totalPrice){
         const text= totalPrice.text();
        var total_price= text.split(" ");
        total_price=total_price[1].trim();

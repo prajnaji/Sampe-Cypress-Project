@@ -47,6 +47,12 @@ class HomePage
       clickPersonalizedGnavSection(){
       return cy.get('#selection-panel > div > a.tile-8.personalized').click()
     }
+
+
+    scroll_And_SelectCountry(){
+   cy.contains('Send Gifts World Wide').scrollIntoView()
+   cy.contains('USA').click()
+    }
     
 
 }

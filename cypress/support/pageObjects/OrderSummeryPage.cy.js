@@ -16,5 +16,14 @@ class OrderSummeryPage{
         return cy.get('div.payment-button-container button.btn-mr.padding-1-0').click();
     }
 
+
+    /*Fill Address Details Form */
+    applayCupponCode(){
+        cy.get('span.coupon-form-focus').click({force:true})
+        cy.get('#coupon').type('igp10',{force:true}).type('{enter}')
+        cy.get('span.Montbold-font.number.bold.totalAmtPay').should('be.visible')
+    }
+    
+
 }
 export default OrderSummeryPage;

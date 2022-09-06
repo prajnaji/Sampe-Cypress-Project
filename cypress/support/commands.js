@@ -53,12 +53,14 @@
  
 import './commands' 
 import CartPage from './pageObjects/cartPage.cy';
+import CheckoutLoginPage from './pageObjects/CheckoutLoginPage.cy';
 import DeliveryDetails from './pageObjects/DeliveryDetails.cy';
 import HomePage from './pageObjects/HomePage.cy';
  
 const hp = new HomePage();
 const cartPage= new CartPage();
 const deliveryDetails = new DeliveryDetails();
+const checkoutLoginPage = new CheckoutLoginPage();
 
  
  
@@ -75,26 +77,6 @@ Cypress.Commands.add('selectProductFromDropdown', (productName) => {
         }
    })
 
-Cypress.Commands.add('getSumOfIndividual_LineItemPrice',()=>{
-    cy.get('p.c-item-d-type.d-flex.justify-content-flex-end > span:nth-child(1)').each(($ele,index,list)=>{
-        var indvidualproductPrice=$ele.text().split(" ");
-        indvidualproductPrice = indvidualproductPrice[1].trim()
-        sum = Number(sum)+Number(indvidualproductPrice)
-        
-
-    }).then(function(){console.log(sum)})
-})
-
-Cypress.Commands.add('CheckTotalPurchase_Eq_Actualprice',(totalPurchasePrice)=>{
-    cy.get('p.overall-price > span[id=cart-total-val]').then(function(totalPrice){
-        const text= totalPrice.text();
-       var total_price= text.split(" ");
-       total_price=total_price[1].trim();
-       expect(Number(sum)).to.equal(Number(total_price));
-    })
-
-})
-
 Cypress.Commands.add('CheckPageTitle',(expectedPageTitle)=>{
      cy.pageTitle().should('include',expectedPageTitle);
 })
@@ -106,7 +88,7 @@ Cypress.Commands.add('EnterValidCupponCode',(cupponCode,successMSG)=>{
         cy.get('div.apply-coupan.revamp-apply-coupon.relative div:nth-child(3) > div:nth-child(2) span').should('contain.text',successMSG);
 })
 
-})
+});
 
 //Reusable Utils --------------------------------
 
@@ -114,7 +96,7 @@ Cypress.Commands.add('RegisteredUserlogin', (email, pw) => {
     chklogin.registeredUser_Email().type(email);
     chklogin.registeredUser_Password().type(pw);
 
-})
+});
 /*Selecting Gnaviagtion option from home page */
 Cypress.Commands.add('selectOptionFromGnav',(gnavOption)=>{
    hp.gnavShop_option().each(($ele,index,list)=>{
@@ -122,24 +104,17 @@ Cypress.Commands.add('selectOptionFromGnav',(gnavOption)=>{
         hp.gnavShop_option().eq(index).click();
      }
    })
-})
+});
 /*Assertion for Shopping Bag Page */
 Cypress.Commands.add('shoppingbagcartassertion',()=>
 {
     let sum=0;
-    cartPage.lineItemPrice().each(($ele,index,list)=>
-    {
-        
+    cartPage.lineItemPrice().each(($ele,index,list)=>{
         var indvidualproductPrice=$ele.text().split(" ");
         indvidualproductPrice = indvidualproductPrice[1].trim()
         sum = Number(sum)+Number(indvidualproductPrice)
-        
-
     }).then(function(){console.log(sum)})
-    
-     cartPage.footerTotalPricetext().then(function(totalpricetext)
-    {
-
+     cartPage.footerTotalPricetext().then(function(totalpricetext){
         var price=totalpricetext.text().split(" ");
         price= price[1].trim();
         expect(Number(sum)).to.equal(Number(price));
@@ -147,7 +122,19 @@ Cypress.Commands.add('shoppingbagcartassertion',()=>
      cartPage.footerqty().should('be.visible');
      cartPage.qtyoption().should('exist').should('be.visible')
      cartPage.proceedCheckout().should('be.visible');
-})
+});
+/* Reusable- Signup For International*/
+Cypress.Commands.add('internationalUserSignup',(fullName,country,mobileNumber,emaiI,password)=>{
+     checkoutLoginPage.signupLink().click({force:true})
+     checkoutLoginPage.newUser_fullName().type(fullName,{force:true});
+     checkoutLoginPage.newUser_countryField().type(country,{force:true});
+     checkoutLoginPage.newUser_mobileNumberField().type(mobileNumber,{force:true});
+     checkoutLoginPage.newUser_emaiIdField().type(emaiI,{force:true});
+     checkoutLoginPage.newUser_passwordField().type(password,{force:true});
+     checkoutLoginPage.newUser_signUp_submitCTA().click({force:true});
+    
+});
+
 
 /* Reusable - Filling The form for International User */
 Cypress.Commands.add('fillingDeliveryDetails',(name, pincode, city, state, addressLine1,mob)=>{
@@ -159,7 +146,7 @@ Cypress.Commands.add('fillingDeliveryDetails',(name, pincode, city, state, addre
     deliveryDetails.mobileNumber1().type(mob,{force:true});
     deliveryDetails.submitButton().click({force:true})
     
-})
+});
 
 /*Reusable - Filling Form for Current Country */
 Cypress.Commands.add('fillingDeliveryDetails1',(name,addressLine1,mob)=>{
@@ -172,7 +159,7 @@ Cypress.Commands.add('fillingDeliveryDetails1',(name,addressLine1,mob)=>{
     })
     cy.get('div.deliver-here-link a').click({ force: true })
     
-})
+});
 
 
 

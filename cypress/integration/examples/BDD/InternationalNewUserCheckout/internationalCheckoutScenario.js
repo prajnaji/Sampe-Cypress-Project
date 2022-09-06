@@ -59,7 +59,7 @@ Given('Launch Home Page , Select Country & navigate to single product page', () 
   })
   And('Fill the Signup Form', function (dataTable) {
     Cypress.on('uncaught:exception', (err, runnable) => { return false })
-    checkoutLoginPage.internationalUserSignup(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], randomNewUseremail, dataTable.rawTable[1][3]);
+    cy.internationalUserSignup(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], randomNewUseremail, dataTable.rawTable[1][3]);
     
   })
   Then('Fill International Adress Details Form & submit form', function (dataTable) {

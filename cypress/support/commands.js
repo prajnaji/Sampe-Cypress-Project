@@ -52,9 +52,15 @@
 //import cypress from 'cypress'
  
 import './commands' 
-import CheckoutLoginPage from "../support/pageObjects/CheckoutLoginPage.cy"
+import CartPage from './pageObjects/cartPage.cy';
+import DeliveryDetails from './pageObjects/DeliveryDetails.cy';
+import HomePage from './pageObjects/HomePage.cy';
+ 
+const hp = new HomePage();
+const cartPage= new CartPage();
+const deliveryDetails = new DeliveryDetails();
 
-const chklogin = new CheckoutLoginPage();
+ 
  
 Cypress.Commands.add('selectProductFromDropdown', (productName) => { 
     
@@ -109,6 +115,67 @@ Cypress.Commands.add('RegisteredUserlogin', (email, pw) => {
     chklogin.registeredUser_Password().type(pw);
 
 })
+/*Selecting Gnaviagtion option from home page */
+Cypress.Commands.add('selectOptionFromGnav',(gnavOption)=>{
+   hp.gnavShop_option().each(($ele,index,list)=>{
+    if($ele.text()==gnavOption){
+        hp.gnavShop_option().eq(index).click();
+     }
+   })
+})
+/*Assertion for Shopping Bag Page */
+Cypress.Commands.add('shoppingbagcartassertion',()=>
+{
+    let sum=0;
+    cartPage.lineItemPrice().each(($ele,index,list)=>
+    {
+        
+        var indvidualproductPrice=$ele.text().split(" ");
+        indvidualproductPrice = indvidualproductPrice[1].trim()
+        sum = Number(sum)+Number(indvidualproductPrice)
+        
+
+    }).then(function(){console.log(sum)})
+    
+     cartPage.footerTotalPricetext().then(function(totalpricetext)
+    {
+
+        var price=totalpricetext.text().split(" ");
+        price= price[1].trim();
+        expect(Number(sum)).to.equal(Number(price));
+    })
+     cartPage.footerqty().should('be.visible');
+     cartPage.qtyoption().should('exist').should('be.visible')
+     cartPage.proceedCheckout().should('be.visible');
+})
+
+/* Reusable - Filling The form for International User */
+Cypress.Commands.add('fillingDeliveryDetails',(name, pincode, city, state, addressLine1,mob)=>{
+    deliveryDetails.nameField().type(name,{force:true});
+    deliveryDetails.pincode().type(pincode,{force:true});
+    deliveryDetails.cityField().type(city,{force:true});
+    deliveryDetails.stateField().type(state,{force:true});
+    deliveryDetails.addressLine1().type(addressLine1,{force:true});
+    deliveryDetails.mobileNumber1().type(mob,{force:true});
+    deliveryDetails.submitButton().click({force:true})
+    
+})
+
+/*Reusable - Filling Form for Current Country */
+Cypress.Commands.add('fillingDeliveryDetails1',(name,addressLine1,mob)=>{
+    deliveryDetails.nameField().type(name,{force:true});
+    deliveryDetails.addressLine1().type(addressLine1,{force:true});
+    deliveryDetails.mobileNumber1().type(mob,{force:true});
+    deliveryDetails.submitButton().click({force:true})
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+    })
+    cy.get('div.deliver-here-link a').click({ force: true })
+    
+})
+
+
+
  
  
 

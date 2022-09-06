@@ -28,90 +28,53 @@ let randomNewUseremail = "cssprajna+" + string + '@gmail.com';
 Given('Launch Home Page', () => {
     cy.visit('https://www.igp.com/#');
 })
-When('Navigate to Spp Page', () => {
-
-    //hp.sddCTA().click()  
-    cy.visit('https://www.igp.com/p-truffle-delight-cake-half-kg--145988');
+When('Navigate to Spp Page', function(dataTable){
+    Cypress.on('uncaught:exception', (err, runnable) => { return false })
+    hp.selectOptionFromGnav(dataTable.rawTable[1][0]);
+    sddpage.selectProductbyFiltering(dataTable.rawTable[1][1],dataTable.rawTable[1][2]); 
 })
-And('EnterPincode & check Availability', () => {
-
-    /* Input For PinCode Field */
+And('EnterPincode , Delivery Option Type and Time', () => {
+    Cypress.on('uncaught:exception', (err, runnable) => {return false})
     sppPage.pingcodeField().type('400072');
-})
-And('Enter Delivery Option Type & Time', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
-    /*Selecting Delevery Option as Same Day Delivery  */
     sppPage.selectTodatDateOption().click();
-    /*Selecting Standard Delivery */
     sppPage.standardDelivery().click();
-    /*Selecting Time From Dropdown */
     sppPage.timePicker().select('20:00 hrs - 23:00 hrs').should('contain.text', '20:00 hrs - 23:00 hrs');
-    /*Click On ADD To Cart Button*/
 })
 And('Add to Cart', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
+    Cypress.on('uncaught:exception', (err, runnable) => {return false })
     sppPage.addToCartCTA().click();
-
     console.log("Add To Cart Button clicked");
 
 })
 And('Click Continue Without Addons', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
+    Cypress.on('uncaught:exception', (err, runnable) => {return false})
     /*Click on Continue Add WithouAddon */
     sppPage.continueWithOutAddons().should('contain.text', 'CONTINUE WITHOUT ADDONS').click();
 })
 Then('Continue Checkout from Viewcart page', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
+    Cypress.on('uncaught:exception', (err, runnable) => {return false})
     /*Checkout From View Shopping Bag/cart page */
     cartPage.shoppingBagTitleCheck();
+    cy.shoppingbagcartassertion();
     cartPage.proceedCheckout().click();
 
 })
-And('Landed on Checkout Signup Form & click on Signup Link', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
+And('Click Checkout Signup Link & Register as a New User', function(dataTable){
+    Cypress.on('uncaught:exception', (err, runnable) => {return false })
     checkoutLoginPage.checkoutLoginPage_checkTitle();
-    checkoutLoginPage.signupLink().click({ force: true })
+    checkoutLoginPage.internationalUserSignup(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], randomNewUseremail, dataTable.rawTable[1][3]);
+     
 })
-
-And('Fill the Signup form', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
-    checkoutLoginPage.newUser_fullName().type('DO NOT DELIVER', { force: true });
-    checkoutLoginPage.newUser_countryField().type('India', { force: true });
-    checkoutLoginPage.newUser_mobileNumberField().type('9877618651', { force: true })
-    checkoutLoginPage.newUser_emaiIdField().type(randomNewUseremail, { force: true })
-    checkoutLoginPage.newUser_passwordField().type("Tester@123", { force: true })
-    checkoutLoginPage.newUser_signUp_submitCTA().click({ force: true })
-
-})
-And('Fill Adress Details Form & submit', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
+And('Fill Adress Details Form & submit', function(dataTable){
+    Cypress.on('uncaught:exception', (err, runnable) => {return false})
     cy.wait(5000);
-    deliveryDetails.nameField().type('Prajna', { force: true })
-    deliveryDetails.addressLine1().type('Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange', { force: true });
-    deliveryDetails.mobileNumber1().type('9776186519', { force: true })
-    deliveryDetails.submitButton().click();
+    cy.fillingDeliveryDetails1(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], randomNewUseremail, dataTable.rawTable[1][3]);
 
 })
-And('Apply CupponCode at OrderSummeryPage', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false
-    })
-    orderSummeryPage.click_ApplyCupponCodeLink();
-
+And('Continue Checkout from Order Summery Page', () => {
+    Cypress.on('uncaught:exception', (err, runnable) => {return false})
+    //orderSummeryPage.applayCupponCode('igp10');
+    orderSummeryPage.click_ProceedTOPayment_CTA();
 
 })
 

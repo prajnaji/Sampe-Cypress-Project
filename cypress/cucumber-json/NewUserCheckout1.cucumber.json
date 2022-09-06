@@ -1,14 +1,14 @@
 [
   {
     "keyword": "Feature",
-    "name": "IGP Scenario My Accounts",
+    "name": "IGP POC Scenario (New User )",
     "line": 1,
-    "id": "igp-scenario-my-accounts",
+    "id": "igp-poc-scenario-(new-user-)",
     "tags": [],
     "uri": "NewUserCheckout1.feature",
     "elements": [
       {
-        "id": "igp-scenario-my-accounts;new-user-checkout-&-signup-at-checkout",
+        "id": "igp-poc-scenario-(new-user-);new-user-checkout-&-signup-at-checkout",
         "keyword": "Scenario",
         "line": 4,
         "name": "New User Checkout & Signup at checkout",
@@ -22,107 +22,146 @@
             "name": "Launch Home Page",
             "result": {
               "status": "passed",
-              "duration": 3172000000
+              "duration": 14204000000
             }
           },
           {
-            "arguments": [],
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "GNAVOption",
+                      "quickfilter",
+                      "productName"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Same Day Delivery",
+                      "Cakes",
+                      "Black Forest Cake (Half Kg)"
+                    ]
+                  }
+                ]
+              }
+            ],
             "keyword": "When ",
             "line": 6,
             "name": "Navigate to Spp Page",
             "result": {
               "status": "passed",
-              "duration": 3587000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "EnterPincode & check Availability",
-            "result": {
-              "status": "passed",
-              "duration": 753000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "Enter Delivery Option Type & Time",
-            "result": {
-              "status": "passed",
-              "duration": 2450000000
+              "duration": 27826000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "Add to Cart",
+            "name": "EnterPincode , Delivery Option Type and Time",
             "result": {
               "status": "passed",
-              "duration": 2736000000
+              "duration": 4176000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 10,
+            "name": "Add to Cart",
+            "result": {
+              "status": "passed",
+              "duration": 519000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
             "name": "Click Continue Without Addons",
             "result": {
               "status": "passed",
-              "duration": 1726000000
+              "duration": 1883000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 11,
+            "line": 12,
             "name": "Continue Checkout from Viewcart page",
             "result": {
               "status": "passed",
-              "duration": 4818000000
+              "duration": 7791000000
             }
           },
           {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 12,
-            "name": "Landed on Checkout Signup Form & click on Signup Link",
-            "result": {
-              "status": "passed",
-              "duration": 189000000
-            }
-          },
-          {
-            "arguments": [],
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "name",
+                      "county",
+                      "mob",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEST DO NOT DELIVER",
+                      "USA",
+                      "443322112233",
+                      "Tester@123"
+                    ]
+                  }
+                ]
+              }
+            ],
             "keyword": "And ",
             "line": 13,
-            "name": "Fill the Signup form",
+            "name": "Click Checkout Signup Link & Register as a New User",
             "result": {
               "status": "passed",
-              "duration": 2647000000
+              "duration": 4201000000
             }
           },
           {
-            "arguments": [],
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "name",
+                      "AddressLine1",
+                      "mobilenumber"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEST DO NOT DELIVER",
+                      "Gulab Estate, T2 Airport Road, Near Sakinka Telephone Exchange",
+                      "9776186769"
+                    ]
+                  }
+                ]
+              }
+            ],
             "keyword": "And ",
-            "line": 14,
+            "line": 16,
             "name": "Fill Adress Details Form & submit",
             "result": {
               "status": "passed",
-              "duration": 8697000000
+              "duration": 9600000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 15,
-            "name": "Apply CupponCode at OrderSummeryPage",
+            "line": 19,
+            "name": "Continue Checkout from Order Summery Page",
             "result": {
               "status": "passed",
-              "duration": 3394000000
+              "duration": 2184000000
             }
           }
         ]

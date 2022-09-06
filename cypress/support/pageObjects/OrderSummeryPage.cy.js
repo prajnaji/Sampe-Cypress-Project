@@ -13,14 +13,14 @@ class OrderSummeryPage{
      
 
     click_ProceedTOPayment_CTA(){
-        return cy.get('div.payment-button-container button.btn-mr.padding-1-0').click();
+        return cy.get('div.payment-button-container button.btn-mr.padding-1-0').click({force:true});
     }
 
 
     /*Fill Address Details Form */
-    applayCupponCode(){
+    applayCupponCode(ccode){
         cy.get('span.coupon-form-focus').click({force:true})
-        cy.get('#coupon').type('igp10',{force:true}).type('{enter}')
+        cy.get('#coupon').type(ccode,{force:true}).type('{enter}')
         cy.get('span.Montbold-font.number.bold.totalAmtPay').should('be.visible')
     }
     

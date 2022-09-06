@@ -32,16 +32,8 @@ class DeliveryDetails {
 
     /*Save & Submit Button */
     submitButton() { return cy.get('button.btn.revamp-c-save-addr-btn'); }
-
-
-
-
-
-
-
-    //Reusable methods 
-
-    /* Filling The form  */
+ 
+    /* Filling The form for International User */
     fillingDeliveryDetails(name, pincode, city, state, addressLine1,mob) {
         cy.get('input[name=fname]').type(name, { force: true });
         cy.get('#location-input').type(pincode, { force: true });
@@ -50,6 +42,19 @@ class DeliveryDetails {
         cy.get('input[name=saddr]').type(addressLine1, { force: true });
         cy.get('input[name=mob]').type(mob, { force: true });
         cy.get('button.btn.revamp-c-save-addr-btn').click({ force: true })
+    }
+
+    /* Filling Form for Country User */
+    fillingDeliveryDetails1(name, addressLine1,mobilenumber){
+        cy.get('input[name=fname]').type(name,{force:true});
+        cy.get('input[name=saddr]').type(addressLine1, { force: true });
+        cy.get('input[name=mob]').type(mobilenumber, { force: true });
+        cy.get('button.btn.revamp-c-save-addr-btn').click({force:true});
+        cy.wait(9000)
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
+        cy.get('div.deliver-here-link a').click({ force: true })
     }
 
      

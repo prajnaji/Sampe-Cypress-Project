@@ -29,12 +29,15 @@ for (var ii = 0; ii < 4; ii++) {
 let randomNewUseremail = "cssprajna+" + string + '@gmail.com';
 
 
-Given('Launch Home Page & navigate to single product page', () => {
+Given('Launch Home Page , Select Country & navigate to single product page', () => {
   cy.visit('https://www.igp.com/#');
   Cypress.on('uncaught:exception', (err, runnable) => {
     return false
   })
-  hp.scroll_And_SelectCountry(); giftousa.slectProduct(); sppPage.assertSelectedCountry(); sppPage.selectDateFromCalender();
+  hp.scroll_And_SelectCountry(); 
+  giftousa.slectProduct(); 
+  sppPage.assertSelectedCountry(); 
+  sppPage.selectDateFromCalender();
 
   When('Add to Cart', () => {
     Cypress.on('uncaught:exception', (err, runnable) => { return false })
@@ -44,30 +47,31 @@ Given('Launch Home Page & navigate to single product page', () => {
 
   And('Continue Checkout from Viewcart page', () => {
     Cypress.on('uncaught:exception', (err, runnable) => { return false })
-
     cartPage.shoppingBagTitleCheck();
+    cy.shoppingbagcartassertion();
     cartPage.proceedCheckout().click();
 
   })
-  Then('Landed on Checkout Signup Form & click on Signup Link', () => {
+  Then('Select Signup Option or link', () => {
     Cypress.on('uncaught:exception', (err, runnable) => { return false })
     checkoutLoginPage.checkoutLoginPage_checkTitle();
     checkoutLoginPage.signupLink().click({ force: true })
   })
-  And('Fill the Signup form', function (dataTable) {
+  And('Fill the Signup Form', function (dataTable) {
     Cypress.on('uncaught:exception', (err, runnable) => { return false })
     checkoutLoginPage.internationalUserSignup(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], randomNewUseremail, dataTable.rawTable[1][3]);
-
+    
   })
-  Then('Fill International Adress Details Form & submit', function (dataTable) {
+  Then('Fill International Adress Details Form & submit form', function (dataTable) {
     Cypress.on('uncaught:exception', (err, runnable) => { return false })
     cy.wait(5000);
-    deliveryDetails.fillingDeliveryDetails(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], dataTable.rawTable[1][3], dataTable.rawTable[1][4], "443322112233", { force: true });
+    cy.fillingDeliveryDetails(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], dataTable.rawTable[1][3], dataTable.rawTable[1][4], "443322112233", { force: true });
+    //deliveryDetails.fillingDeliveryDetails(dataTable.rawTable[1][0], dataTable.rawTable[1][1], dataTable.rawTable[1][2], dataTable.rawTable[1][3], dataTable.rawTable[1][4], "443322112233", { force: true });
     cy.get('div.deliver-here-link').click({ force: true })
   })
   And('Continue Checkout from Order Summery Page', () => {
     Cypress.on('uncaught:exception', (err, runnable) => { return false })
-    orderSummeryPage.applayCupponCode();
+    orderSummeryPage.applayCupponCode('igp10');
     orderSummeryPage.click_ProceedTOPayment_CTA();
   })
 

@@ -3,6 +3,8 @@ Feature: IGP POC Scenario (International NewUser Checkout & Signup at checkout)
  
 Scenario: New User Checkout & Signup at checkout 
 Given Launch Home Page , Select Country & navigate to single product page
+| Req_Country | sku Name |
+|USA| Bunch of 12 Roses with Godiva Chocolates & Teddy Bear |
 When Add to Cart
 And Continue Checkout from Viewcart page
 Then Select Signup Option or link

@@ -26,17 +26,25 @@ var string = '';
 for (var ii = 0; ii < 4; ii++) {
   string += chars[Math.floor(Math.random() * chars.length)];
 }
-let randomNewUseremail = "cssprajna+" + string + '@gmail.com';
+let randomNewUseremail = "cssprajnaa+" + string + '@gmail.com';
+let fixtrdata; 
+beforeEach(function(){
+ 
+      cy.log("Loading the fixure file")
+      cy.fixture('example.json').then(function(data){
+  
+          fixtrdata = data
+      })
+  })
 
-
-Given('Launch Home Page , Select Country & navigate to single product page', () => {
+Given('Launch Home Page , Select Country & navigate to single product page', function(dataTable){
   cy.visit('https://www.igp.com/#');
   Cypress.on('uncaught:exception', (err, runnable) => {
     return false
   })
-  hp.scroll_And_SelectCountry(); 
-  giftousa.slectProduct(); 
-  sppPage.assertSelectedCountry(); 
+  hp.scroll_And_SelectCountry(dataTable.rawTable[1][0])
+  giftousa.slectProduct(dataTable.rawTable[1][1]); 
+  sppPage.assertSelectedCountry(dataTable.rawTable[1][0]); 
   sppPage.selectDateFromCalender();
 
   When('Add to Cart', () => {

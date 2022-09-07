@@ -54,9 +54,9 @@ class HomePage
     }
 
    /*Selcting Country in Home page */
-   scroll_And_SelectCountry(){
+   scroll_And_SelectCountry(counrtyName){
    cy.contains('Send Gifts World Wide').scrollIntoView()
-   cy.contains('USA').click()
+   cy.contains(counrtyName).click()
     }
 
     /*Selecting Gnav Option */

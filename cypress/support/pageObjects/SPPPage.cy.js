@@ -54,8 +54,8 @@ class SPPPage{
 
     /*Assert Country in SPP Page */
 
-    assertSelectedCountry(){
-        cy.get('input[name=countries]').should('have.value','USA')
+    assertSelectedCountry(expectedCountryName){
+        cy.get('input[name=countries]').should('have.value',expectedCountryName)
     }
 
 

@@ -1,17 +1,17 @@
 [
   {
     "keyword": "Feature",
-    "name": "IGP Scenario My Accounts",
+    "name": "IGP POC Checkout Scenario (Return User checkout & Placing Order)",
     "line": 1,
-    "id": "igp-scenario-my-accounts",
+    "id": "igp-poc-checkout-scenario-(return-user-checkout-&-placing-order)",
     "tags": [],
     "uri": "ReturnUserCheckout.feature",
     "elements": [
       {
-        "id": "igp-scenario-my-accounts;new-user-checkout-&-signup-at-checkout",
+        "id": "igp-poc-checkout-scenario-(return-user-checkout-&-placing-order);return-user-checkout-&-placing-order",
         "keyword": "Scenario",
         "line": 4,
-        "name": "New User Checkout & Signup at checkout",
+        "name": "Return User checkout & Placing Order",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -21,9 +21,8 @@
             "line": 5,
             "name": "Launch Home Page",
             "result": {
-              "status": "failed",
-              "duration": 78875000000,
-              "error_message": "AssertionError: Timed out retrying after 16000ms: Expected to find element: `div.upload_button_holder`, but never found it.\n    at Context.eval (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\ReturnUserCheckout.feature:76:6)\n    at Context.resolveAndRunStepDefinition (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\ReturnUserCheckout.feature:12574:29)\n    at Context.eval (https://www.igp.com/__cypress/tests?p=cypress\\integration\\examples\\BDD\\ReturnUserCheckout.feature:11895:35)"
+              "status": "passed",
+              "duration": 55542000000
             }
           }
         ]

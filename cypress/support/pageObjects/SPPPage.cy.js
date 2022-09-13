@@ -45,6 +45,20 @@ class SPPPage{
     }
 
 
+    /*Selecting Date From Dropdown*/
+    selectDateFromCalender(Country){
+  cy.get('[class="non-active-btn calender-row col s12 active-btn"]').click()
+  cy.get('[id="std-datepicker"]').click()
+  cy.get('[class="ui-datepicker-calendar"]').contains('15').click()
+    }
+
+    /*Assert Country in SPP Page */
+
+    assertSelectedCountry(expectedCountryName){
+        cy.get('input[name=countries]').should('have.value',expectedCountryName)
+    }
+
+
 }
 
 export default SPPPage ;

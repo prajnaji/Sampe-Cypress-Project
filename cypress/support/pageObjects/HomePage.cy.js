@@ -47,6 +47,27 @@ class HomePage
       clickPersonalizedGnavSection(){
       return cy.get('#selection-panel > div > a.tile-8.personalized').click()
     }
+
+    /*Gnavigation 9 Options */
+    getGnavoption(){
+      return cy.get('div.sel-pnl-re > a > span')
+    }
+
+   /*Selcting Country in Home page */
+   scroll_And_SelectCountry(counrtyName){
+   cy.contains('Send Gifts World Wide').scrollIntoView()
+   cy.contains(counrtyName).click()
+    }
+
+    /*Selecting Gnav Option */
+    selectOptionFromGnav(gnavOption){
+      cy.get('div.sel-pnl-re > a > span').each(($ele,index,list)=>{
+         if($ele.text()==gnavOption){
+            cy.get('div.sel-pnl-re > a > span').eq(index).click();
+         }
+      })
+    }
+
     
 
 }

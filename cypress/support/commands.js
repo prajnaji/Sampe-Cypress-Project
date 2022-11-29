@@ -51,7 +51,8 @@
 
 //import cypress from 'cypress'
  
-import './commands' 
+import './commands';
+import 'cypress-iframe';
 import CartPage from './pageObjects/cartPage.cy';
 import CheckoutLoginPage from './pageObjects/CheckoutLoginPage.cy';
 import DeliveryDetails from './pageObjects/DeliveryDetails.cy';
